@@ -1,0 +1,10 @@
+# ignore temporary files
+*~
+*.pdf
+*.aux
+*.nav
+*.toc
+*.log
+*.snm
+*.out
+*.vrb
