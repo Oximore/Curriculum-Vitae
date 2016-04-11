@@ -4,6 +4,7 @@
 % (l) 2012 Arun I B <arunib@smail.iitm.ac.in> http://www.ee.iitm.ac.in/~ee10s026/
 %This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
 
+
 \documentclass[letterpaper,11pt]{article}
 \newlength{\outerbordwidth}
 \pagestyle{empty}
@@ -23,6 +24,8 @@
 %% \usepackage[utf8]{inputenc}
 %% \usepackage[french]{babel}
 \usepackage{wrapfig}
+\usepackage{enumitem} % \usepackage{enumitem}
+\usepackage{setspace}
 %-----------------------------------------------------------
 %Edit these values as you see fit
 
@@ -43,32 +46,34 @@
 \setlength{\tabcolsep}{0in}
 \setlength{\textheight}{9.5in}
 \setlength{\textwidth}{7in}
-\setlength{\topmargin}{-0.3in}
+\setlength{\topmargin}{-0.5in}
 \setlength{\topskip}{0in}
 \setlength{\voffset}{0.1in}
 
 
 %-----------------------------------------------------------
 %Custom commands
-\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{\vspace{8pt}
+\newcommand{\resitem}[1]{\item[] \begin{spacing}{1} #1 \end{spacing} \vspace{0pt}}
+
+\newcommand{\resheading}[1]{\vspace{-8pt}
   \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
     \begin{shaded}
 \setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
     \end{shaded}
-  }\vspace{-5pt}
+  }\vspace{-17.5pt}
 }
+
 \newcommand{\ressubheading}[4]{
 \begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
   \textbf{#1} & #2 \\
   \textit{#3} & \textit{#4} \\
-\end{tabular*}\vspace{-6pt}}
-
+\end{tabular*}\vspace{0pt}}
 
 \newcommand\picturespath{ressources/pictures/}
 
 %-----------------------------------------------------------
 
+\newcommand\sizetopsepforbigenum{10pt}
 
 \begin{document}
 
@@ -94,19 +99,22 @@
   %33000 Bordeaux \\
 \end{tabular*}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \resheading{Compétences}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
+\begin{itemize}[noitemsep,topsep=\sizetopsepforbigenum,parsep=0pt,partopsep=0pt]
 \item[]\textbf{Compétences pratiques:}
-  \begin{itemize}
-  \item[]{Langages:} C, C++, C\#, Bash, Fortran, Java, Python, SQL, \LaTeX.
-  \item[]{Bibliothèques pour le parallélisme:} MPI, OpenMP, threads posix, OpenCL.
+  \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+  \item[]{Langages:} C, C++, C\#, Bash, Java, Python, SQL, \LaTeX.
+  \item[]{Bibliothèques pour le parallélisme:} MPI, threads posix.
+  \item[]{Notions:} Fortran, OpenMP, OpenCL.
     %  \item[]{Système:}
     %    Programmation système en C, multi-threads, multi-c\oe{}ur et GPU.
   \end{itemize}
+
 \item[]\textbf{Connaissances théoriques:}
-  \begin{itemize}
+  \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
   \item[]{Algorithmique parallèle, calcul matriciel, algorithmique des graphes, ordonnancement.}
     
     %%   \item[]{Notions de compilation, mises en application avec Yacc et
@@ -116,66 +124,56 @@
     %%     flots et combinatoire.  Notions de gestion de projet avec le
     %%     langage UML.}
   \end{itemize}
+
 \item[]\textbf{Environnement de travail:}
   %\item[]{Environnement de développement:}
-  \begin{itemize}
-  \item[]{Environnement de développement:} Emacs, Visual Studio 2010/2008, Eclipse, Codeblocks.
+  \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+  \item[]{Environnement de développement:}  Eclipse, Emacs, Visual Studio 2010/2008, Codeblocks.
   \item[]{Système d'exploitation:} Linux, Windows.% (Seven, xp).}
   \end{itemize}
-  
+
 \item[]\textbf{Langues:}
-  \begin{itemize}
+  \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
   \item[]{Anglais : Écrit et parlé scolaire, maîtrise du vocabulaire informatique (830 au Toeic).}
   \item[]{Espagnol : Écrit et parlé couramment.}
   \end{itemize}
 \end{itemize}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \resheading{Expériences}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{itemize}
-
-%% \item[]
-%%   \ressubheading{Inria}{Pau}{Ingénieur Jeune Diplômé}{Novembre 2014 - ...}
-%%   \begin{itemize}
-%%     \resitem{Développement de la bibliothèque Aerosol au sein de l'équipe CAGIRE. Implémentation de pré-conditionneurs et de méthodes multi-gilles par agrégation sur des maillages non structurés. }
-%%   \end{itemize}
-
-
+\begin{itemize}[noitemsep,topsep=\sizetopsepforbigenum,parsep=0pt,partopsep=0pt]
+\item[]
+  \ressubheading{Inria}{Pau}{Ingénieur Jeune Diplômé}{Novembre 2014 - 2016}
+  \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+    \resitem{Développement de la bibliothèque Aerosol au sein de l'équipe CAGIRE. Implémentation de pré-conditionneurs et de méthodes multi-gilles par agrégation sur des maillages hybrides non-structurés.}
+  \end{itemize}
 \item[]
   \ressubheading{Inria}{Bordeaux}{Stage de recherche}{Mars 2013 - Septembre 2013}
-  \begin{itemize}
+  \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
     \resitem{Optimisation de l'ordonnancement et du partitionnement d'un couplage de code de simulation de diffusion de la chaleur en parallèle (centaines de c\oe urs), en partenariat avec le CERFACS.}
     %\resitem{Optimisation de l'ordonnancement et du partitionnement du couplage des codes hautement parallèles (12000 coeurs) de simulation de diffusion de la chaleur AVTP-AVBP (CERFACS).}
   \end{itemize}
-
-
 \item[]
   \ressubheading{MaxSea International}{Bidart}{Stage de développement}{Juin 2012 - Septembre 2012}
-  \begin{itemize}
+  \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
     \resitem{Exportation et parallélisation d'une chaine de production de cartes géographiques marines au format vectoriel dans le Cloud Microsoft Azure.}
   \end{itemize}  
-
 \item[] 
   \ressubheading{Expérience scolaire}{Bordeaux}{Réalisation d'une interface}{2011 - 2012}
-  \begin{itemize}
+  \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
     \resitem{Réalisation d'une IHM et ajout de formats de sortie pour un logiciel de traduction de Braille Musical
       pour un client, enseignant-chercheur à l'Inria.}
   \end{itemize}  
-
 %\item[]
 %  \ressubheading{Travaux Saisonniers}{France, Espagne, Irlande}{Divers emplois saisonniers : \textnormal{Travaux agricoles, menuiserie, restauration.}}{étés 2006 à 2013}
-
 \end{itemize}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \resheading{Formation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
+\begin{itemize}[noitemsep,topsep=\sizetopsepforbigenum,parsep=0pt,partopsep=0pt]
   %  \ressubheading{Enseirb-Matmeca}{Bordeaux}{ \textnormal{ Diplome d'ingénieur en informatique, option calcul parallèle.}}{2010 -- 2013}
 \item[]
   \ressubheading{Enseirb-Matmeca}{Bordeaux}{ \textnormal{ Diplôme d'ingénieur en informatique, option PRCD}}{2010 -- 2013}\\
@@ -186,11 +184,10 @@
   \ressubheading{Lycée Victor Duruy}{Mont-de-Marsan}{ \textnormal{ Baccalauréat Scientifique avec mention assez bien.}}{2004 -- 2007}  \\
 \end{itemize}
 
-
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \resheading{Centres d'intérêt}
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
+\begin{itemize}[noitemsep,topsep=\sizetopsepforbigenum,parsep=0pt,partopsep=0pt]
 \item[] \textbf{Loisirs :} jonglerie, lecture, jeu vidéo, vélo, kayak-polo.
 \item[] \textbf{Associatif :} Membre de l'association Jonglargonne. %Membre du club de jonglage et du club Bd de l'Enseirb-Matmeca.
 \end{itemize}
@@ -201,100 +198,108 @@
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Education}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-\item
-  \ressubheading{My University}{My Town, ON}{B.Sc. Physics}{2004 - 2008}
-  \begin{itemize}
-    \resitem{Undergraduate Thesis: Why Electron Spins Rule}
-    \resitem{Graduated with Honours and a XX.X\% average}
-    \end{itemize}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \resheading{Education}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \begin{itemize}
+%% \item
+%%   \ressubheading{My University}{My Town, ON}{B.Sc. Physics}{2004 - 2008}
+%%   \begin{itemize}
+%%     \resitem{Undergraduate Thesis: Why Electron Spins Rule}
+%%     \resitem{Graduated with Honours and a XX.X\% average}
+%%     \end{itemize}
 
-\item
-  \ressubheading{My High School}{Hick Town, ON}{High School Diploma}{2000 - 2004}
-  \begin{itemize}
-    \resitem{President of Students' Council and captain of the rugby team in senior year}
-    \resitem{Graduated with a XX.X\% average}
-    \end{itemize}
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Personal Statement}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{center}
-  \parbox{6.762in}{I'm the hardest working person I know, and therefore you should hire me. My qualities include blah, blah, and blah. I have lots of experience working with blah, and I am not afraid to blah. In fact, I'm such an amazing person that I can't believe you haven't hired me yet.}
-  \end{center}
+%% \item
+%%   \ressubheading{My High School}{Hick Town, ON}{High School Diploma}{2000 - 2004}
+%%   \begin{itemize}
+%%     \resitem{President of Students' Council and captain of the rugby team in senior year}
+%%     \resitem{Graduated with a XX.X\% average}
+%%     \end{itemize}
+%% \end{itemize}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Work Experience}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-\item
-  \ressubheading{Calculus I}{My University}{Undergraduate Teaching Assistant}{Sept. 2007 - Apr. 2008}
-  \begin{itemize}
-    \resitem{Graded assignments.}
-    \resitem{Led weekly course seminars.}
-    \end{itemize}
-
-\item 
-  \ressubheading{Happy Time Farms}{Hick Town, ON}{Farm Hand}{Sept. 2000 - Dec. 2002}
-  \begin{itemize}
-    \resitem{Milked cows.}
-    \resitem{Milked goats.}
-    \resitem{Milked cats.}
-    \end{itemize}
-
-\item
-  \ressubheading{Hick Town Press}{Hick Town, ON}{Paperboy}{June 1996 - Aug. 2000}
-  \begin{itemize}
-    \resitem{Delivered the local newspaper to 70 customers every morning.}
-    \end{itemize}
-\end{itemize}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \resheading{Personal Statement}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   \begin{center}
+%%   \parbox{6.762in}{I'm the hardest working person I know, and therefore you should hire me. My qualities include blah, blah, and blah. I have lots of experience working with blah, and I am not afraid to blah. In fact, I'm such an amazing person that I can't believe you haven't hired me yet.}
+%%   \end{center}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Awards, Grants \& Honours}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{-2pt}
-\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
-    \multicolumn{2}{c}{Physics Graduation Prize (\$XXX) \cftdotfill{\cftdotsep}2007}\\
-    \multicolumn{2}{c}{Award of Awesomeness (\$XXX) \cftdotfill{\cftdotsep} 2006}\\
-    \multicolumn{2}{c}{My University Entrance Scholarship (\$X XXX) \cftdotfill{\cftdotsep}2004}\\
-    \multicolumn{2}{c}{My High School Grade 12 Physics Award (\$XXX) \cftdotfill{\cftdotsep}2004}\\
-    \multicolumn{2}{c}{Boy Genius Award (\$XXX) \cftdotfill{\cftdotsep}2003}\\
-    \vphantom{E}
-\end{tabular*}
-\end{center}\vspace*{-16pt}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \resheading{Work Experience}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \begin{itemize}
+%% \item
+%%   \ressubheading{Calculus I}{My University}{Undergraduate Teaching Assistant}{Sept. 2007 - Apr. 2008}
+%%   \begin{itemize}
+%%     \resitem{Graded assignments.}
+%%     \resitem{Led weekly course seminars.}
+%%     \end{itemize}
+
+%% \item 
+%%   \ressubheading{Happy Time Farms}{Hick Town, ON}{Farm Hand}{Sept. 2000 - Dec. 2002}
+%%   \begin{itemize}
+%%     \resitem{Milked cows.}
+%%     \resitem{Milked goats.}
+%%     \resitem{Milked cats.}
+%%     \end{itemize}
+
+%% \item
+%%   \ressubheading{Hick Town Press}{Hick Town, ON}{Paperboy}{June 1996 - Aug. 2000}
+%%   \begin{itemize}
+%%     \resitem{Delivered the local newspaper to 70 customers every morning.}
+%%     \end{itemize}
+%% \end{itemize}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Skills}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
-\item
-  Programming and Markup Languages
-  \begin{itemize}
-    \resitem{{\bf Expert:} CSS, HTML}
-    \resitem{{\bf Intermediate:} Java, \LaTeX, Python}
-    \end{itemize}
-
-\item
-  Software
-  \begin{itemize}
-    \resitem{{\bf Expert:} MS Access, MS Excel, MS Word}
-    \resitem{{\bf Intermediate:} Maple, MATLAB}
-    \end{itemize}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \resheading{Awards, Grants \& Honours}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \vspace{-2pt}
+%% \begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
+%%     \multicolumn{2}{c}{Physics Graduation Prize (\$XXX) \cftdotfill{\cftdotsep}2007}\\
+%%     \multicolumn{2}{c}{Award of Awesomeness (\$XXX) \cftdotfill{\cftdotsep} 2006}\\
+%%     \multicolumn{2}{c}{My University Entrance Scholarship (\$X XXX) \cftdotfill{\cftdotsep}2004}\\
+%%     \multicolumn{2}{c}{My High School Grade 12 Physics Award (\$XXX) \cftdotfill{\cftdotsep}2004}\\
+%%     \multicolumn{2}{c}{Boy Genius Award (\$XXX) \cftdotfill{\cftdotsep}2003}\\
+%%     \vphantom{E}
+%% \end{tabular*}
+%% \end{center}\vspace*{-16pt}
 
 
-\item
-  Other
-  \begin{itemize}
-    \resitem{People person, enjoys being challenged, hardworking, smells nice}
-    \end{itemize}
-\end{itemize}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \resheading{Skills}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \begin{itemize}
+%% \item
+%%   Programming and Markup Languages
+%%   \begin{itemize}
+%%     \resitem{{\bf Expert:} CSS, HTML}
+%%     \resitem{{\bf Intermediate:} Java, \LaTeX, Python}
+%%     \end{itemize}
+
+%% \item
+%%   Software
+%%   \begin{itemize}
+%%     \resitem{{\bf Expert:} MS Access, MS Excel, MS Word}
+%%     \resitem{{\bf Intermediate:} Maple, MATLAB}
+%%     \end{itemize}
+
+
+%% \item
+%%   Other
+%%   \begin{itemize}
+%%     \resitem{People person, enjoys being challenged, hardworking, smells nice}
+%%     \end{itemize}
+%% \end{itemize}
 
 \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TODO : 
+%%
+%% reduce item space :  http://tex.stackexchange.com/questions/10684/vertical-space-in-lists
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
