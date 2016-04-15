@@ -108,8 +108,7 @@
 
 \begin{tabular*}{7in}{l c r}
   \textbf{\Large Lux Benjamin}  \\
-  Ingénieur en informatique  \\
-  26 ans - Permis B          & \LARGE{Ingénieur en Informatique}\\
+  26 ans - Permis B          & \LARGE{\vof{IT Developer}{Ingénieur en informatique}}  \\
   benjamin0lux@gmail.fr      & Dans le domaine du HPC\\ 
   06\,12\,89\,07\,20       %%&  à partir d'octobre 2013\\
 
@@ -119,19 +118,23 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Compétences}
+\resheading{\vof{Skills}{Compétences}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% débutant, intermédiaire, confirmé spécialiste et expert
+% Novice, Beginner, Intermediate, Skillful, Proficient, Experienced, Advanced, Senior, Expert
 \begin{itemize}[noitemsep,topsep=\sizetopsepforbigenum,parsep=0pt,partopsep=0pt]
-\item[]\textbf{Compétences pratiques:}
+\item[]\textbf{\vof{Programming Languages and parallel API:}{Langage de programmation et API pour le parallélisme:}}
   \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item[]{Langages:} C, C++, C\#, Bash, Java, Python, SQL, \LaTeX.
-  \item[]{Bibliothèques pour le parallélisme:} MPI, threads posix.
-  \item[]{Notions:} Fortran, OpenMP, OpenCL.
-    %  \item[]{Système:}
-    %    Programmation système en C, multi-threads, multi-c\oe{}ur et GPU.
-  \end{itemize}
+    \resitem{{\bf \vof{Advanced:}{Confirmé :}} C, C++, Bash, MPI}
+    \resitem{{\bf \vof{Intermediate:}{Intermédiaire :}} C\#, Python, Java, threads posix, SQL, \LaTeX}
 
-\item[]\textbf{Connaissances théoriques:}
+    \begin{VERSIONlong}
+    \resitem{{\bf \vof{Beginner:}{Notions :}}  Fortran, OpenMP, OpenCL}
+    %  \item[]{Système:} Programmation système en C, multi-threads, multi-c\oe{}ur et GPU.
+    \end{VERSIONlong}
+  \end{itemize}
+  
+\item[]\textbf{Connaissances théoriques :}
   \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
   \item[]{Algorithmique parallèle, calcul matriciel, algorithmique des graphes, ordonnancement.}
     
@@ -150,15 +153,27 @@
   \item[]{Système d'exploitation:} Linux, Windows.% (Seven, xp).}
   \end{itemize}
 
-\item[]\textbf{Langues:}
+
+%% So, on a resume, it would be completely reasonable to have a section for Language Skills that looked like this:
+%%     English: native language
+%%     French: limited working proficiency (ILR scale)
+%%     German: full professional proficiency (ILR scale)
+%% But if you think all of that is overkill, it's still ok to do this:
+%%     English: native language
+%%     French: intermediate (speaking, reading); basic (writing)
+%%     German: fluent (speaking, reading, writing)
+%%  professional and technical
+\item[]\textbf{\vof{Languages:}{Langues :}}
   \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-  \item[]{Anglais : Écrit et parlé scolaire, maîtrise du vocabulaire informatique (830 au Toeic).}
-  \item[]{Espagnol : Écrit et parlé couramment.}
+  \item[]{\vof{French : native language}{Français : langue maternelle}} %  maîtrise du vocabulaire informatique (830 au Toeic)
+  \item[]{\vof{English : technical reading and writing, intermediate speaking}{Anglais : lecture et écriture** technique, parlé intermédiaire}} %  maîtrise du vocabulaire informatique (830 au Toeic)
+  \item[]{\vof{Spanish : experienced reading and speaking, intermediate writing}{Espagnol : lecture et parlé couramment, écrit intermédiaire}}
   \end{itemize}
 \end{itemize}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Expériences}
+\resheading{\vof{Work Experience}{Expériences}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}[noitemsep,topsep=\sizetopsepforbigenum,parsep=0pt,partopsep=0pt]
@@ -189,13 +204,15 @@
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Formation}
+\resheading{\vof{Education}{Formation}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}[noitemsep,topsep=\sizetopsepforbigenum,parsep=0pt,partopsep=0pt]
   %  \ressubheading{Enseirb-Matmeca}{Bordeaux}{ \textnormal{ Diplome d'ingénieur en informatique, option calcul parallèle.}}{2010 -- 2013}
+%% \item[]
+%%   \ressubheading{Enseirb-Matmeca}{Bordeaux}{ \textnormal{ Diplôme d'ingénieur en informatique, option PRCD}}{2010 -- 2013}\\
+%%   \hspace{4ex} (Parallélisme, Régulation et Calcul Distribué). 
 \item[]
-  \ressubheading{Enseirb-Matmeca}{Bordeaux}{ \textnormal{ Diplôme d'ingénieur en informatique, option PRCD}}{2010 -- 2013}\\
-  \hspace{4ex} (Parallélisme, Régulation et Calcul Distribué). \\
+  \ressubheading{Enseirb-Matmeca}{Bordeaux}{ \textnormal{ Diplôme d'ingénieur en informatique, option Parallélisme, Régulation et Calcul Distribué. }}{2010 -- 2013}
 \item[]
   \ressubheading{Lycée Louis Barthou}{Pau}{ \textnormal{ Élève en classes préparatoires, en Mathématiques et Physique, option informatique.}}{2007 -- 2010}  \\
 \item[]
