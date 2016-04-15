@@ -23,14 +23,18 @@
 %% \usepackage[T1]{fontenc}
 %% \usepackage[utf8]{inputenc}
 %% \usepackage[french]{babel}
+\usepackage[francais,english]{babel}
+\usepackage[T1]{fontenc}
 \usepackage{wrapfig}
 \usepackage{enumitem} % \usepackage{enumitem}
 \usepackage{setspace}
+%\usepackage{comment}
+\usepackage[tracing]{versions} % to get short and long version
 %-----------------------------------------------------------
 %Edit these values as you see fit
 
-\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
-\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\setlength{\outerbordwidth}{3pt}       % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}   % Outer background color of title bars (0 = black, 1 = white)
 \definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
 
 
@@ -69,11 +73,25 @@
   \textit{#3} & \textit{#4} \\
 \end{tabular*}\vspace{0pt}}
 
-\newcommand\picturespath{ressources/pictures/}
 
 %-----------------------------------------------------------
-
+\newcommand\picturespath{ressources/pictures/}
 \newcommand\sizetopsepforbigenum{10pt}
+
+% Sitch between English and French, thank to Remi
+\newcount\IndicAnglais
+\global\IndicAnglais=1
+\newcommand*{\vf}{\selectlanguage{francais}\IndicAnglais=0\global\IndicAnglais=0}
+\newcommand*{\vo}{\selectlanguage{english}\IndicAnglais=1\global\IndicAnglais=1}
+\newcommand{\vof}[2]{\ifnum\IndicAnglais=1{}#1\else#2\fi}
+
+%\vf % \vo = anglais / \vf = français
+%\vf
+\vo
+
+\excludeversion{VERSIONlong}
+%\includeversion{VERSIONlong}
+%\markversion{VERSIONlong}
 
 \begin{document}
 
@@ -185,12 +203,40 @@
 \end{itemize}
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Centres d'intérêt}
+\resheading{\vof{Leisure}{Centres d'intérêt}} % Hobby
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}[noitemsep,topsep=\sizetopsepforbigenum,parsep=0pt,partopsep=0pt]
-\item[] \textbf{Loisirs :} jonglerie, lecture, jeu vidéo, vélo, kayak-polo.
-\item[] \textbf{Associatif :} Membre de l'association Jonglargonne. %Membre du club de jonglage et du club Bd de l'Enseirb-Matmeca.
+\item[] \textbf{\vof{Hobbies:}{Loisirs :}} \vof{juggling, climbing, kayaking, reading, video gaming, cycling, raspberry Pi}{ jonglerie, escalade, kayak, lecture, jeu vidéo, vélo, raspberry Pi} %kayak-polo.
+\item[] \textbf{\vof{Associative:}{Associatif :}} MIPS-FabLab de Pau, Membre de l'association Jonglargonne, %logiciel libre % Ancien Membre du club de jonglage et du club Bd de l'Enseirb-Matmeca.
 \end{itemize}
+
+
+
+
+%% Pour sélectionner des parties, j'utilise le package ``version''.
+
+%% Pour changer de langue, j'ai fait simplement ma propre macro \vof dont voici
+%% le code :
+
+%% \newcount\IndicAnglais
+%% \global\IndicAnglais=1
+%% \newcommand*{\vf}{\selectlanguage{francais}\IndicAnglais=0\global\IndicAnglais=0}
+%% \newcommand*{\vo}{\selectlanguage{english}\IndicAnglais=1\global\IndicAnglais=1}
+%% \newcommand{\vof}[2]{\ifnum\IndicAnglais=1{}#1\else#2\fi}
+
+%% Tu noteras que pour respecter la typographie de chaque langue (les espaces avant les ``:'' en français
+%% et pas en anglais par exemple), j'utilise ``\selectlanguage'' qui nécessite de charger
+%% \usepackage[francais,english]{babel}
+
+%% Pour avoir le texte dans les 2 langues, il suffit de taper :
+%% \vof{What an interesting lecture!}{Quel cours intéressant !}
+
+%% Pour choisir une langue, il suffit d'utiliser \vo pour l'anglais et \vf pour le français (on
+%% peut passer de l'un à l'autre n'importe où dans le document).
+
+
+%% Rémi 
+
 
 
 
